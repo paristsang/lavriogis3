@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waypoint Recorder</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+</head>
+<body>
+
+    <div id="map" style="height: 400px;"></div>
+    <div class="compass">
+        <div class="arrow"></div>
+        <div class="compass-circle"></div>
+        <div class="my-point"></div>
+    </div>
+	<form id="dataForm">
+        <label for="latitude">Latitude:</label>
+        <input type="text" id="latitude" name="latitude" readonly><br>
+        <label for="longitude">Longitude:</label>
+        <input type="text" id="longitude" name="longitude" readonly><br>
+        <label for="description">Description:</label>
+        <textarea id="description" name="description"></textarea><br>
+        <button type="button" onclick="addWaypoint()">Record Waypoint</button>
+		<button type="button" onclick="downloadWaypoints()">Download Waypoints</button>
+
+    <input type="file" id="uploadJson" accept=".json">
+    <button type="button" onclick="uploadWaypoints()">Upload Waypoints</button>
+    </form>
+
+
+<div>
+    <video id="video" width="640" height="480" autoplay style="display:none;"></video>
+    <button id="toggleCamera">Enable Camera</button>
+    <button id="capture" style="display:none;">Capture Photo</button>
+    <canvas id="canvas" width="640" height="480" style="display:none;"></canvas>
+    <button id="savePhoto" style="display:none;">Save Photo</button>
+</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
